@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="appSvgIconSets">
+  <div ng-controller="DemoCtrl" layout="column" layout-margin>
+    <p>Display an icon from a pre-registered set of icons:</p>
+    <p>
+      <md-icon md-svg-icon="alarm"         style="color: #0F0;"                        aria-label="Alarm Icon"></md-icon>
+      <md-icon md-svg-icon="social:cake"   style="color: #f00;width:60px;height:60px;" aria-label="Cake Icon"></md-icon>
+      <md-icon md-svg-icon="social:people" style="color: #00F;" class="s48"            aria-label="People Icon"></md-icon>
+    </p>
+  </div>
+  <style>
+.icondemoSvgIconSets md-progress-circular {
+  margin-bottom: 20px; }
+.icondemoSvgIconSets md-icon {
+  margin: 20px;
+  margin-top: 0;
+  width: 24px;
+  height: 24px; }
+.icondemoSvgIconSets .demo-content {
+  min-height: 210px; }
+.icondemoSvgIconSets .appSvgIconSets {
+  padding: 25px; }
+.icondemoSvgIconSets .s48 {
+  width: 48px;
+  height: 48px; }
+  </style>
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="svgInset.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="inputIconDemo">
+  <div ng-controller="DemoCtrl" layout="column">
+    <br/>
+    <md-content layout-padding class="autoScroll">
+      <md-input-container class="md-icon-float" >
+        <!-- Use floating label instead of placeholder -->
+        <label>Name</label>
+        <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+        <input ng-model="user.name" type="text"></md-input-container>
+
+      <md-input-container md-no-float>
+        <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+        <input ng-model="user.phone" maxlength="11" type="text" placeholder="Phone Number">
+      </md-input-container>
+
+      <md-input-container >
+        <!-- Use floating placeholder instead of label -->
+        <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+        <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+      </md-input-container>
+
+      <md-input-container md-no-float>
+        <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
+        <input ng-model="user.address" type="text" placeholder="Address" ></md-input-container>
+    </md-content>
+  </div>
+
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="../angularjs/angular-messages.js"></script>
+  <script src="icon.js"></script>
+
+  <style>
+.inputdemoIcons .inputIconDemo {
+  min-height: 48px; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
+  color: green; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.name {
+  color: dodgerblue; }
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.email, .inputdemoIcons md-input-container.md-input-invalid > md-icon.name {
+  color: red; }
+</style>
+</body>
+</html>

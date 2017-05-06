@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="fabSpeedDialBasicUsageDemo">
+  <div ng-controller="AppCtrl" layout="column">
+    <md-content class="md-padding" layout="column">
+      <p>
+        You may supply a direction of
+        <code>left</code>
+        ,
+        <code>up</code>
+        ,
+        <code>down</code>
+        , or
+        <code>right</code>
+        through the
+        <code>md-direction</code>
+        attribute.
+      </p>
+      <div class="lock-size" layout="row" layout-align="center center">
+        <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                         ng-class="demo.selectedMode">
+          <md-fab-trigger>
+            <md-button aria-label="menu" class="md-fab md-warn">
+              <!-- <md-icon md-img-src="hello_qq_right.100.png"></md-icon> -->
+            </md-button>
+          </md-fab-trigger>
+          <md-fab-actions>
+            <md-button aria-label="twitter" class="md-fab md-raised md-mini">
+              <!-- <md-icon md-img-src="hello_qq_right.100.png"></md-icon> -->
+            </md-button>
+            <md-button aria-label="facebook" class="md-fab md-raised md-mini">
+              <!-- <md-icon md-img-src="hello_qq_right.100.png"></md-icon> -->
+            </md-button>
+            <md-button aria-label="Google hangout" class="md-fab md-raised md-mini">
+              <!-- <md-icon md-img-src="hello_qq_right.100.png"></md-icon> -->
+            </md-button>
+          </md-fab-actions>
+        </md-fab-speed-dial>
+      </div>
+      <div layout="row" layout-align="space-around">
+        <div layout="column"> <b>Direction</b>
+          <md-radio-group ng-model="demo.selectedDirection">
+            <md-radio-button ng-repeat="direction in demo.availableDirections"
+                           ng-value="direction" class="text-capitalize">{{direction}}</md-radio-button>
+          </md-radio-group>
+        </div>
+        <div layout="column"> <b>Open/Closed</b>
+          <md-radio-group ng-model="demo.isOpen">
+            <md-radio-button ng-value="true">Open</md-radio-button>
+            <md-radio-button ng-value="false">Closed</md-radio-button>
+          </md-radio-group>
+        </div>
+        <div layout="column">
+          <b>Animation Modes</b>
+          <md-radio-group ng-model="demo.selectedMode">
+            <md-radio-button ng-repeat="mode in demo.availableModes" ng-value="mode">{{mode}}</md-radio-button>
+          </md-radio-group>
+        </div>
+      </div>
+      <p class="note">
+        Note that you can also hover over the directive's area or tab through each button to open and
+      activate the speed dial menu.
+      </p>
+    </md-content>
+  </div>
+
+  <style>
+.fabSpeedDialdemoBasicUsage .text-capitalize {
+  text-transform: capitalize; }
+.fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000 !important; }
+.fabSpeedDialdemoBasicUsage p.note {
+  font-size: 1.2rem; }
+.fabSpeedDialdemoBasicUsage .lock-size {
+  min-width: 300px;
+  min-height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; }
+  </style>
+
+
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="faqSpeed.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="tooltipDemo1">
+
+  <div ng-controller="AppCtrl">
+    <md-toolbar class="md-accent">
+      <h2 class="md-toolbar-tools">
+        <span flex>Awesome Md App</span>
+        <md-button class="md-fab md-accent" aria-label="refresh">
+          <md-tooltip>Refresh</md-tooltip>
+          <md-icon md-svg-src="img/icons/ic_refresh_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+        </md-button>
+      </h2>
+    </md-toolbar>
+    <md-content layout-padding>
+      <p>
+        The tooltip is visible when the button is hovered, focused, or touched.
+      </p>
+      <md-button class="md-fab md-fab-top-left left" aria-label="Insert Drive">
+        <md-icon md-svg-src="img/icons/ic_insert_drive_file_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+        <md-tooltip md-visible="demo.showTooltip">Insert Drive</md-tooltip>
+      </md-button>
+
+      <md-button class="md-fab md-fab-top-right right" aria-label="Photos" ng-click="buttonFn()">
+        <md-icon md-svg-src="img/icons/ic_photo_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+        <md-tooltip>Photos</md-tooltip>
+      </md-button>
+
+      <div style="margin-top: 150px;">
+        <p>
+          Additionally, the Tooltip's `md-visible` attribute can use data-binding to programmatically show/hide itself. Toggle the checkbox below...
+        </p>
+      </div>
+      <md-checkbox ng-model="demo.showTooltip">Insert Drive</md-checkbox>
+    </md-content>
+  </div>
+
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="../angularjs/angular-messages.js"></script>
+  <script src="tooltip.js"></script>
+  <style>
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button, .tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; }
+.tooltipdemoBasicUsage .left {
+  top: 70px !important;
+  left: 56px !important; }
+.tooltipdemoBasicUsage .right {
+  top: 70px !important;
+  right: 56px !important; }
+  </style>
+</body>
+</html>

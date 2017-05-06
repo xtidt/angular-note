@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="toastDemo1">
+
+  <div ng-controller="AppCtrl" layout-fill layout="column" class="inset">
+    <p>Toast can be dismissed with a swipe, a timer, or a button.</p>
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <div style="width:50px"></div>
+      <md-button ng-click="showCustomToast()">Show Custom</md-button>
+      <md-button ng-click="showSimpleToast()">Show Simple</md-button>
+      <md-button class="md-raised" ng-click="showActionToast()">Show With Action</md-button>
+      <div style="width:50px"></div>
+    </div>
+    <div>
+      <br/> <b>Toast Position: "{{getToastPosition()}}"</b>
+      <br/>
+      <md-checkbox ng-repeat="(name, isSelected) in toastPosition"
+        ng-model="toastPosition[name]">{{name}}</md-checkbox>
+      <md-button class="md-primary md-fab md-fab-bottom-right">FAB</md-button>
+      <md-button class="md-accent md-fab md-fab-top-right">FAB</md-button>
+    </div>
+  </div>
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="../angularjs/angular-messages.js"></script>
+  <script src="Toast.js"></script>
+  <style>
+.tabsdemoStaticTabs md-tab-content {
+  padding: 25px; }
+  .tabsdemoStaticTabs md-tab-content:nth-child(1) {
+    background-color: #42A5F5; }
+  .tabsdemoStaticTabs md-tab-content:nth-child(2) {
+    background-color: #689F38; }
+  .tabsdemoStaticTabs md-tab-content:nth-child(3) {
+    background-color: #26C6DA; }
+.tabsdemoStaticTabs .after-tabs-area > span {
+  margin-top: 25px;
+  padding-right: 15px;
+  vertical-align: middle;
+  line-height: 30px;
+  height: 35px; }
+.tabsdemoStaticTabs .after-tabs-area > md-checkbox {
+  margin-top: 26px;
+  margin-left: 0; }
+  </style>
+</body>
+</html>

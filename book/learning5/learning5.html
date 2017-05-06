@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<script src="angular.js"></script>
+	<script src="app.js" /></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="myController">
+		<input type="text" ng-model="name" placeholder="your name">
+		<h1>{{ name }}</h1>
+		
+		<ul >
+			<li  ng-repeat="item in array" ng-click="del($index)">品牌：{{ item.name }} ， 价钱：{{ item.price }}</li>
+		</ul>
+
+	<button ng-click="addAction()">添加数组</button>
+	<button ng-click="delAction()">删除数组</button>
+	<button ng-click="sort()">删除数组</button>
+	</div>
+</body>
+</html>

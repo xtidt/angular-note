@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="gridListDemo1">
+  <div ng-controller="AppCtrl as appCtrl">
+  <md-content layout-padding>
+    <md-grid-list
+        md-cols-gt-md="12" md-cols-sm="3" md-cols-md="8"
+        md-row-height-gt-md="1:1" md-row-height="4:3"
+        md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
+      <md-grid-tile
+          ng-repeat="tile in appCtrl.colorTiles"
+          ng-style="{
+            'background': tile.color
+          }"
+          md-colspan-gt-sm="{{tile.colspan}}"
+          md-rowspan-gt-sm="{{tile.rowspan}}">
+      </md-grid-tile>
+    </md-grid-list>
+  </md-content>
+</div>
+
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="responsiveUsage.js"></script>
+</body>
+</html>

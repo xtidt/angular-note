@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<script src="../angularjs/angular.js"></script>
+	<script src="app.js" /></script>
+</head>
+<body>
+	<div class="large-12 columns">
+		<label>Username</label>
+		<input type="text"
+placeholder="Desired username"
+name="username"
+ng-model="signup.username"
+ng-minlength="3"
+ng-maxlength="20"
+ensure-unique="username" required />
+		<div class="error"
+ng-show="signup_form.username.$dirty &&
+signup_form.username.$invalid">
+			<small class="error"
+ng-show="signup_form.username.$error.required">Please input a username</small>
+			<small class="error"
+ng-show="signup_form.username.$error.minlength">Your username is required to be at least 3 characters</small>
+			<small class="error"
+ng-show="signup_form.username.$error.maxlength">Your username cannot be longer than 20 characters</small>
+			<small class="error"
+ng-show="signup_form.username.$error.unique">That username is taken, please try another</small>
+		</div>
+	</div>
+
+	<button type="submit"
+ng-disabled="signup_form.$invalid"
+class="button radius">Submit</button>
+</body>
+</html>

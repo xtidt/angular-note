@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="switchDemo1">
+
+  <div class="inset" ng-controller="SwitchDemoCtrl">
+    <md-switch ng-model="data.cb1" aria-label="Switch 1">Switch 1: {{ data.cb1 }}</md-switch>
+
+    <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">Switch 2 (md-warn): {{ data.cb2 }}</md-switch>
+
+    <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">Switch (Disabled)</md-switch>
+
+    <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="data.cb4">Switch (Disabled, Active)</md-switch>
+
+    <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5">Switch (md-primary): No Ink</md-switch>
+    
+    <md-switch ng-model="data.cb6" aria-label="Switch 6" ng-change="onChange(data.cb6)">Switch 6 message: {{ message }}</md-switch>
+  </div>
+
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="../angularjs/angular-messages.js"></script>
+  <script src="switch.js"></script>
+
+  <style>
+.switchdemoBasicUsage .inset {
+  padding-left: 25px;
+  padding-top: 25px; }
+  </style>
+</body>
+</html>

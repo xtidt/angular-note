@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet"></head>
+
+<body ng-app="chipsCustomInputDemo">
+	<div ng-controller="DemoCtrl as ctrl" layout="column">
+		<md-content class="md-padding" layout="column">
+			<h2 class="md-title">Display a set of items as chips.</h2>
+			<md-chips>
+				<md-chip>Hockey</md-chip>
+				<md-chip>Lacrosse</md-chip>
+				<md-chip>Baseball</md-chip>
+				<!-- Static chips are transcluded -->
+				<md-chip>{{ctrl.chipText}}</md-chip>
+			</md-chips>
+			<p class="note">
+				Static chips cannot be selected, removed or edited, and are not part of any model.
+				<br/>
+				If no
+				<code>ng-model</code>
+				is provided, there are no input elements in
+				<code>md-chips</code>
+				.
+			</p>
+		</md-content>
+	</div>
+
+	<style>
+.chipsdemoStaticChips p.note {
+  font-size: 12px; }
+	</style>
+
+	<!-- Angular Material Dependencies -->
+	<link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="../bower_components/angular-material/angular-material.min.js"></script>
+	<script src="input.js"></script>
+</body>
+</html>

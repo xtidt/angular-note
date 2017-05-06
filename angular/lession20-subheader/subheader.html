@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet"></head>
+
+<body ng-app="subheaderBasicDemo">
+
+  <div ng-controller="SubheaderAppCtrl" layout="column" flex layout-fill>
+    <md-content style="height: 600px;" md-theme="altTheme">
+    
+      <section>
+        <md-subheader class="md-primary">Unread Messages</md-subheader>
+        <md-list layout-padding>
+          <md-list-item class="md-3-line" ng-repeat="message in messages">
+            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+            <div class="md-list-item-text">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>{{message.notes}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </section>
+
+      <section>
+        <md-subheader class="md-warn">Late Messages</md-subheader>
+        <md-list layout="column" layout-padding>
+          <md-list-item class="md-3-line" ng-repeat="message in messages">
+            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+            <div class="md-list-item-text">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>{{message.notes}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </section>
+
+      <section>
+        <md-subheader>Read Messages</md-subheader>
+        <md-list layout="column" layout-padding>
+          <md-list-item class="md-3-line" ng-repeat="message in messages">
+            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+            <div class="md-list-item-text">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>{{message.notes}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </section>
+
+      <section>
+        <md-subheader class="md-accent">Archived messages</md-subheader>
+        <md-list layout="column" layout-padding>
+          <md-list-item class="md-3-line" ng-repeat="message in messages">
+            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+            <div class="md-list-item-text">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>{{message.notes}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </section>
+
+    </md-content>
+  </div>
+
+  <!-- Angular Material Dependencies -->
+  <link rel="stylesheet" href="../angularjs/angular-material.css">
+  <script src="../angularjs/angular.js"></script>
+  <script src="../angularjs/angular-animate.js"></script>
+  <script src="../angularjs/angular-aria.js"></script>
+  <script src="../angularjs/angular-material.js"></script>
+  <script src="../angularjs/angular-messages.js"></script>
+  <script src="subheader.js"></script>
+
+  <style>
+.subheaderdemoBasicUsage .face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  margin: 16px; }
+  </style>
+</body>
+</html>

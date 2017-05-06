@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<script src="../angularjs/angular.js"></script>
+	<script src="app.js" /></script>
+</head>
+<body>
+<div ng-controller="myController">
+	<div  >
+		<input type="text" ng-model="name" placeholder="your name">
+		<h1>{{ msg }}</h1>
+		<h1>{{ name | number:2 }}</h1>
+		<h2>{{ clock }}</h2>
+		<hr>
+		数值格式化货币格式 
+		<hr>
+		<input type="text" ng-model="money" placeholder="money">
+		<h2>{{ money | currency }}</h2>
+		<hr>
+		数值格式化为日期格式 
+		<hr>
+		<input type="text" ng-model="today" placeholder="today">
+		<h2>{{ today | date:'shortDate' }}</h2>
+		<h2>{{ today | date:'yyyy, EEE , dd' }}</h2>
+	</div>
+	<div ng-include="'template.html'" ng-controller="template">
+		
+	</div>
+</div>
+</body>
+</html>

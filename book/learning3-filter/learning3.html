@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<script src="../angularjs/angular.js"></script>
+	<script src="app.js" /></script>
+</head>
+<body>
+	<div ng-controller="myController">
+		<div  >
+			<input type="text" ng-model="name" placeholder="your name">
+			<h1>{{ msg }}</h1>
+			<h1>{{ name | number:2 }}</h1>
+			<h2>{{ clock }}</h2>
+			<hr>
+			数值格式化货币格式
+			<hr>
+			<input type="text" ng-model="money" placeholder="money">
+			<h2>{{ money | currency }}</h2>
+			<hr>
+			数值格式化为日期格式
+			<hr>
+			<input type="text" ng-model="today" placeholder="today">
+			<h2>{{ today | date:'shortDate' }}</h2>
+			<h2>{{ today | date:'yyyy, EEE , dd' }}</h2>
+		</div>
+
+	</div>
+
+	<div ng-init="greeting='HelloWorld'">
+		<p ng-bind="greeting"></p>
+		<!-- 过滤数组对象 -->
+		{{ ['Ari','Lerner','Likes','To','Eat','Pizza'] | filter:'e' }}
+		<hr>
+		<!-- 过滤对象组成的数组 -->
+		{{ [{
+'name': 'Ari',
+'City': 'San Francisco',
+'favorite food': 'Pizza'
+},{
+'name': 'Nate',
+'City': 'San Francisco',
+'favorite food': 'indian food'
+}] | filter:{'favorite food': 'Pizza'} }}
+
+		<hr>
+		<!-- json对象转换 -->
+		{{ {'name': 'Ari', 'City': 'SanFrancisco'} | json }}
+
+		<hr>
+		limitTo 截取字符串 'this is a question'-><br>
+		{{ 'this is a question' | limitTo : -5 }}
+
+		<hr>转换为小写
+		{{ 'ABCBBBCBCB' | lowercase }}
+
+		<hr>过滤器将数字转化为文本
+		number
+
+		<hr>
+		<!-- orderBy -->
+		{{ [{
+'name': 'Ari',
+'status': 'awake'
+},{
+'name': 'Q',
+'status': 'sleeping'
+},{
+'name': 'Nate',
+'status': 'awake'
+}] | orderBy:'name'  }}
+	</div>
+</body>
+</html>

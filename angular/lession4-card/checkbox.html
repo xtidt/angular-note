@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet"></head>
+
+<body ng-app="checkboxDemo1">
+	<div ng-controller="AppCtrl" class="md-padding">
+		<fieldset class="standard">
+			<legend>
+				Using
+				<code>ng-model</code>
+			</legend>
+			<div layout="row" layout-wrap>
+				<div flex="50">
+					<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">Checkbox 1: {{ data.cb1 }}</md-checkbox>
+				</div>
+				<div flex="50">
+					<md-checkbox
+            ng-model="data.cb2"
+            aria-label="Checkbox 2"
+            ng-true-value="'yup'"
+            ng-false-value="'nope'"
+            class="md-warn">Checkbox 2 (md-warn): {{ data.cb2 }}</md-checkbox>
+				</div>
+				<div flex="50">
+					<md-checkbox ng-disabled="true" aria-label="Disabled checkbox" ng-model="data.cb3">Checkbox: Disabled</md-checkbox>
+				</div>
+				<div flex="50">
+					<md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb4" ng-init="data.cb4=true">Checkbox: Disabled, Checked</md-checkbox>
+				</div>
+				<div flex="50">
+					<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">Checkbox (md-primary): No Ink</md-checkbox>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+
+	<!-- cloumn2 -->
+	<div ng-controller="AppCtrl2" class="md-padding">
+		<div layout="row">
+			<div flex="50" flex-md="100" layout="column">
+				<fieldset class="standard" flex>
+					<legend>
+						Using
+						<code>md-checkbox</code>
+						with
+						<code>ng-checked</code>
+					</legend>
+					<div layout="row" layout-wrap>
+						<div flex="50" ng-repeat="item in items">
+							<md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+								{{ item }}
+								<span ng-if="exists(item, selected)">selected</span>
+							</md-checkbox>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div flex="50" flex-md="100" layout="column">
+				<fieldset class="standard" flex>
+					<legend>
+						Using
+						<code>&lt;input type="checkbox"&gt;</code>
+					</legend>
+					<div layout="row" layout-wrap>
+						<div ng-repeat="item in items" class="standard" flex="50">
+							<label>
+								<input type="checkbox" ng-checked="exists(item, selected)" ng-click="toggle(item, selected)"/>
+								{{ item }}
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		<h2 class="md-title">Selected Items</h2>
+		<code style="display: block; padding: 8px;">{{selected | json}}</code>
+	</div>
+
+	<style>
+.checkboxdemoBasicUsage .checkboxDemo1 div {
+  clear: both; }
+.checkboxdemoBasicUsage .checkboxDemo1 md-checkbox {
+  float: left; }
+.checkboxdemoBasicUsage p {
+  padding-left: 8px; }
+.checkboxdemoBasicUsage fieldset.standard {
+  border-style: solid;
+  border-width: 1px; }
+.checkboxdemoBasicUsage legend {
+  color: #3F51B5; }
+.checkboxdemoBasicUsage legend code {
+  color: #3F51B5;
+  font-weight: normal; }
+
+  .checkboxdemoSyncing .checkboxDemo1 div {
+  clear: both; }
+.checkboxdemoSyncing .checkboxDemo1 md-checkbox {
+  float: left; }
+.checkboxdemoSyncing legend {
+  color: #3F51B5; }
+.checkboxdemoSyncing legend code {
+  color: #3F51B5;
+  font-weight: normal; }
+.checkboxdemoSyncing p {
+  padding-left: 8px; }
+.checkboxdemoSyncing .info {
+  padding-left: 13px; }
+.checkboxdemoSyncing div.standard {
+  padding: 8px;
+  padding-left: 15px; }
+.checkboxdemoSyncing fieldset.standard {
+  border-style: solid;
+  border-width: 1px; }
+	</style>
+
+	<!-- Angular Material Dependencies -->
+	<link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="../bower_components/angular-material/angular-material.min.js"></script>
+	<script src="checkbox.js"></script>
+</body>
+</html>
