@@ -1,7 +1,9 @@
 # angular-note
 
-* angular-materil ex
+* angular-materil example
+> ng-material
+
 * angularjs
 * tuling-angular
 
-ng-material
+
